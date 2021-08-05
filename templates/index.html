@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warhammer ELO</title>
+</head>
+
+<body>
+    
+    <p>Place holder for my warhammer app</p>
+
+    <hr>
+
+    {% for player in player_list %}
+
+    <p>{{player.name }} |{{player.current_rating }} | {{ player.alliance }}
+
+    {% endfor %}
+    
+
+
+</body>
+
+</html>
+
+{% endblock body %}
