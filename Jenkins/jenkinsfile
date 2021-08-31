@@ -8,7 +8,7 @@ pipeline {
             steps {
                 script{
                     if (env.install == 'true'){
-                        sh 'bash scripts/install-requirements.sh'
+                        sh 'bash Jenkins/install-requirements.sh'
                     }
                 }
             }
