@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+    enivoment {
+        install = 'true'
+    }
+    stages{
+        stage('Install Requirements') {
+            steps {
+                script{
+                    if (env.install == 'true'){
+                        sh 'bash Jenkins/install-requirements.sh'
+                    }
+                }
+            }
+        }
+    }
+    stages {
+        stage('Build') {
+            steps {
+                // install docker and docker compose
+                // docker-compose build
+                sh 'docker-compose build'
+            }
+        }
+        stage('Push') {
+            steps {
+                // install docker and docker compose
+                // docker-compose push
+                sh 'docker-compose push'
+            }
+        }
+        stage('Test') {
+            steps {
+                //
+            }
+        }
+        stage('Deploy') {
+            steps {
+                //
+            }
+        }
+    }
+}
